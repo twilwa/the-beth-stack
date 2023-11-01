@@ -1,0 +1,21 @@
+namespace: beth-stack
+beth-stack:
+  defines: runnable
+  metadata:
+    name: beth-stack
+    description: >-
+      A tool for creating web apps and websites. It provides a CLI that enables
+      the user to build and run their projects.
+    icon: https://emojiapi.dev/api/v1/package.svg
+  containers:
+    beth-stack:
+      build: .
+      image: env-1819.registry.local/beth-stack:main-ee59d2c
+  services:
+    main:
+      container: beth-stack
+      port: 3001
+      host-port: 3001
+      publish: false
+      protocol: TCP
+      description: Main port for the app running
